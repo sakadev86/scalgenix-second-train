@@ -482,12 +482,12 @@ document.getElementById('leadForm').addEventListener('submit', function(e){
 function showSuccess(){
   formStep.style.display = 'none';
   successStep.style.display = 'block';
-  if (typeof fbq !== 'undefined') fbq('track', 'CompleteRegistration');
+  if (typeof fbq !== 'undefined') fbq('trackCustom', 'ThankYouView');
 }
 document.getElementById('groupBtn').href = SCALGENIX.groupUrl;
 document.getElementById('channelBtn').href = SCALGENIX.channelUrl;
 document.getElementById('groupBtn').addEventListener('click', () => {
-  if (typeof fbq !== 'undefined') fbq('trackCustom', 'JoinGroupClick');
+  if (typeof fbq !== 'undefined') fbq('track', 'CompleteRegistration');
 });
 try {
   const saved = JSON.parse(localStorage.getItem('sgx_lead') || 'null');
